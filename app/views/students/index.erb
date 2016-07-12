@@ -1,0 +1,20 @@
+<h1>All Students</h1>
+
+<table>
+  <thead>
+    <th>
+      Name
+    </th>
+    <th>
+      # of Addresses
+    </th>
+  </thead>
+  <tbody>
+    <% Student.all.each do |student| %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.addresses.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
