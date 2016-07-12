@@ -1,0 +1,20 @@
+<h1>All Courses</h1>
+
+<table>
+  <thead>
+    <th>
+      Name
+    </th>
+    <th>
+      # of Enrollments
+    </th>
+  </thead>
+  <tbody>
+    <% Course.all.each do |course| %>
+      <tr>
+        <td><%= course.name %></td>
+        <td><%= course.enrollments.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,4 +1,4 @@
-<h1>Addresses for <%= @student.name %></h1>
+<h1>Addresses and Courses for <%= @student.name %></h1>
 <table>
   <thead>
     <th>Name</th>
@@ -6,6 +6,7 @@
     <th>City</th>
     <th>State</th>
     <th>Zip Code</th>
+    <th>Courses</th>
   </thead>
   <tbody>
     <% @student.addresses.all.each do |address| %>
@@ -15,7 +16,8 @@
       <td><%= address.city %></td>
       <td><%= address.state %></td>
       <td><%= address.zip_code %></td>
-    </tr>
     <% end %>
+      <td><%= @student.courses.pluck(:name).join(', ') %></td>
+    </tr>
   </tbody>
 </table>
